@@ -2,95 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* SASBIO Design System - Scientific Healthtech Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - HSL */
+    --sasbio-blue-tech: 197 99% 34%;
+    --sasbio-blue-light: 181 38% 47%;
+    --sasbio-green-health: 130 47% 48%;
+    --sasbio-green-bright: 139 60% 44%;
+    
+    /* Semantic tokens */
+    --background: 200 20% 98%;
+    --foreground: 200 50% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 200 50% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 200 50% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 197 99% 34%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 130 47% 48%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 200 20% 94%;
+    --muted-foreground: 200 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 181 38% 47%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 197 99% 34%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* SASBIO Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(197 99% 34%) 0%, hsl(181 38% 47%) 50%, hsl(130 47% 48%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(197 99% 34%) 0%, hsl(181 38% 47%) 100%);
+    --gradient-green: linear-gradient(135deg, hsl(130 47% 48%) 0%, hsl(139 60% 44%) 100%);
+    --gradient-blue-green: linear-gradient(90deg, hsl(197 99% 34%) 0%, hsl(130 47% 48%) 100%);
+    --gradient-radial: radial-gradient(circle at center, hsl(181 38% 47% / 0.2) 0%, transparent 70%);
+    
+    /* Glow Effects */
+    --glow-blue: 0 0 40px hsl(197 99% 34% / 0.4);
+    --glow-green: 0 0 40px hsl(130 47% 48% / 0.4);
+    --glow-accent: 0 0 30px hsl(181 38% 47% / 0.3);
+    
+    /* Glassmorphism */
+    --glass-bg: hsl(0 0% 100% / 0.7);
+    --glass-border: hsl(0 0% 100% / 0.3);
+    --glass-blur: 20px;
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-primary: 197 99% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 181 38% 90%;
+    --sidebar-accent-foreground: 197 99% 34%;
+    --sidebar-border: 200 20% 88%;
+    --sidebar-ring: 197 99% 34%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 200 40% 6%;
+    --foreground: 200 10% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 200 40% 10%;
+    --card-foreground: 200 10% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 200 40% 10%;
+    --popover-foreground: 200 10% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 181 38% 47%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 130 47% 48%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 200 30% 15%;
+    --muted-foreground: 200 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 197 99% 34%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 200 30% 20%;
+    --input: 200 30% 20%;
+    --ring: 181 38% 47%;
+
+    --sidebar-background: 200 40% 8%;
+    --sidebar-foreground: 200 10% 90%;
+    --sidebar-primary: 181 38% 47%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 200 30% 15%;
+    --sidebar-accent-foreground: 181 38% 60%;
+    --sidebar-border: 200 30% 20%;
+    --sidebar-ring: 181 38% 47%;
   }
 }
 
@@ -99,7 +118,128 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/70 border border-white/30 shadow-lg;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-blue-green);
+  }
+
+  /* Scientific Grid Background */
+  .scientific-grid {
+    background-image: 
+      linear-gradient(hsl(var(--sasbio-blue-tech) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--sasbio-blue-tech) / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Molecular Pattern */
+  .molecular-pattern {
+    background-image: radial-gradient(circle at 20% 30%, hsl(var(--sasbio-blue-light) / 0.1) 2px, transparent 2px),
+                      radial-gradient(circle at 80% 70%, hsl(var(--sasbio-green-health) / 0.1) 2px, transparent 2px),
+                      radial-gradient(circle at 50% 50%, hsl(var(--sasbio-blue-tech) / 0.05) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 50px 50px;
+  }
+
+  /* Glow Button */
+  .glow-button {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .glow-button:hover {
+    box-shadow: var(--glow-blue);
+  }
+
+  .glow-button-green:hover {
+    box-shadow: var(--glow-green);
+  }
+
+  /* Pill Button */
+  .pill-button {
+    @apply rounded-full px-8 py-3 font-medium transition-all duration-300;
+  }
+
+  /* Hero Gradient Overlay */
+  .hero-overlay {
+    background: linear-gradient(135deg, 
+      hsl(197 99% 34% / 0.85) 0%, 
+      hsl(181 38% 47% / 0.7) 50%, 
+      hsl(130 47% 48% / 0.6) 100%);
+  }
+
+  /* Animated Gradient Border */
+  .gradient-border {
+    @apply relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl;
+    padding: 2px;
+    background: var(--gradient-blue-green);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Pulse Glow */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--sasbio-green-health) / 0.4); }
+    50% { box-shadow: 0 0 40px hsl(var(--sasbio-green-health) / 0.6); }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(0 0% 100% / 0.2) 50%, 
+      transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
