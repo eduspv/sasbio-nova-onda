@@ -3,7 +3,15 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import {
+  Send,
+  Mail,
+  Phone,
+  Instagram,
+  Facebook,
+  Linkedin,
+  CheckCircle,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
@@ -14,26 +22,24 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast({
       title: "Mensagem enviada!",
       description: "Entraremos em contato em breve.",
     });
-    
+
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
   return (
     <section className="py-24 bg-muted/30 relative overflow-hidden">
       <div className="absolute inset-0 molecular-pattern opacity-20" />
-      
+
       <div className="container mx-auto px-4 relative">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -58,35 +64,92 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            {[
-              { icon: Mail, label: "E-mail", value: "contato@sasbio.com.br" },
-              { icon: Phone, label: "Telefone", value: "(11) 99999-9999" },
-              { icon: MapPin, label: "Endereço", value: "São Paulo, SP - Brasil" },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ x: 5 }}
-                className="flex items-start gap-4 p-6 bg-card rounded-2xl shadow-sm hover:shadow-md transition-all"
-              >
-                <motion.div 
-                  className="w-14 h-14 rounded-xl bg-gradient-to-br from-sasbio-blue-tech to-sasbio-blue-light flex items-center justify-center flex-shrink-0"
-                  whileHover={{ rotate: [0, -10, 10, 0] }}
-                  transition={{ duration: 0.5 }}
+            {/* Email */}
+            <motion.a
+              href="mailto:contato@sasbio.com.br"
+              whileHover={{ y: -3 }}
+              className="flex items-start gap-4 p-6 bg-card rounded-2xl shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="w-14 h-14 rounded-xl bg-sasbio-green-health/15 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-6 h-6 text-sasbio-green-health" />
+              </div>
+
+              <div>
+                <p className="text-muted-foreground text-sm mb-1">E-mail</p>
+                <p className="font-medium text-foreground">contato@sasbio.com.br</p>
+              </div>
+            </motion.a>
+
+            {/* Phone */}
+            <motion.a
+              href="tel:+556132573601"
+              whileHover={{ y: -3 }}
+              className="flex items-start gap-4 p-6 bg-card rounded-2xl shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="w-14 h-14 rounded-xl bg-sasbio-green-health/15 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-sasbio-green-health" />
+              </div>
+
+              <div>
+                <p className="text-muted-foreground text-sm mb-1">Telefone</p>
+                <p className="font-medium text-foreground">(61) 3257-3601</p>
+              </div>
+            </motion.a>
+
+            {/* Social compact */}
+            <div className="bg-card rounded-2xl p-6 shadow-sm border border-border/50">
+              <p className="text-muted-foreground text-sm mb-4">Redes sociais</p>
+
+              <div className="grid grid-cols-3 gap-3">
+                <motion.a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-sasbio-green-health/10 hover:bg-sasbio-green-health/20 transition-colors py-3"
+                  aria-label="Instagram"
                 >
-                  <item.icon className="w-6 h-6 text-white" />
-                </motion.div>
-                <div>
-                  <p className="text-muted-foreground text-sm mb-1">{item.label}</p>
-                  <p className="font-medium text-foreground">{item.value}</p>
-                </div>
-              </motion.div>
-            ))}
+                  <Instagram className="w-5 h-5 text-sasbio-green-health" />
+                  <span className="hidden sm:inline text-sm font-medium text-foreground">
+                    Instagram
+                  </span>
+                </motion.a>
+
+                <motion.a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-sasbio-green-health/10 hover:bg-sasbio-green-health/20 transition-colors py-3"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5 text-sasbio-green-health" />
+                  <span className="hidden sm:inline text-sm font-medium text-foreground">
+                    Facebook
+                  </span>
+                </motion.a>
+
+                <motion.a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-sasbio-green-health/10 hover:bg-sasbio-green-health/20 transition-colors py-3"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5 text-sasbio-green-health" />
+                  <span className="hidden sm:inline text-sm font-medium text-foreground">
+                    LinkedIn
+                  </span>
+                </motion.a>
+              </div>
+
+              <p className="text-muted-foreground text-xs mt-4">
+                Siga a SASBIO para notícias e mais conteúdos sobre a sua saúde.
+              </p>
+            </div>
           </motion.div>
 
           {/* Contact Form */}
@@ -96,46 +159,57 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6 bg-card p-8 rounded-3xl shadow-lg">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6 bg-card p-8 rounded-3xl shadow-lg"
+            >
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Nome</label>
-                  <Input 
-                    placeholder="Seu nome" 
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    Nome
+                  </label>
+                  <Input
+                    placeholder="Seu nome"
                     required
                     className="bg-background border-border/50 focus:border-sasbio-blue-tech"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">E-mail</label>
-                  <Input 
-                    type="email" 
-                    placeholder="seu@email.com" 
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    E-mail
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder="seu@email.com"
                     required
                     className="bg-background border-border/50 focus:border-sasbio-blue-tech"
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Telefone</label>
-                <Input 
-                  placeholder="(00) 00000-0000" 
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Telefone
+                </label>
+                <Input
+                  placeholder="(00) 00000-0000"
                   className="bg-background border-border/50 focus:border-sasbio-blue-tech"
                 />
               </div>
-              
+
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Mensagem</label>
-                <Textarea 
-                  placeholder="Como podemos ajudar?" 
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Mensagem
+                </label>
+                <Textarea
+                  placeholder="Como podemos ajudar?"
                   rows={4}
                   required
                   className="bg-background border-border/50 focus:border-sasbio-blue-tech resize-none"
                 />
               </div>
 
-              <Button 
+              <Button
                 type="submit"
                 size="lg"
                 disabled={isSubmitting || isSubmitted}

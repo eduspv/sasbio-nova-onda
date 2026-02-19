@@ -2,34 +2,41 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
+import logo from "@/assets/logosasgrande-semfundo.png";
 
 const AboutPage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-center bg-gradient-to-br from-sasbio-blue-tech via-sasbio-blue-light to-sasbio-green-health">
-        <div className="absolute inset-0 scientific-grid opacity-10" />
-        <div className="absolute inset-0 molecular-pattern opacity-20" />
-        
-        <div className="container mx-auto px-4 relative pt-24">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
-              Quem Somos
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4">
-              Conheça a SASBIO
-            </h1>
-            <p className="text-xl text-white/90">
-              Inovação, ciência e compromisso com a saúde
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+  {/* imagem de fundo */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('/images/about/about-hero.jpg')" }}
+  />
+
+  {/* overlay gradiente + texturas */}
+  <div className="absolute inset-0 bg-gradient-to-br from-sasbio-blue-tech/35 via-sasbio-blue-light/35 to-sasbio-green-health/35" />
+  <div className="absolute inset-0 scientific-grid opacity-10" />
+  <div className="absolute inset-0 molecular-pattern opacity-20" />
+
+  {/* conteúdo */}
+  <div className="container mx-auto px-4 relative pt-24">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-center max-w-3xl mx-auto"
+    >
+      <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-white text-sm font-medium mb-0">
+        Quem Somos
+      </span>
+
+      <img src={logo} alt="SASBIO" className="mx-auto mb-0 w-80" />
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Content */}
       <section className="py-24 bg-background">

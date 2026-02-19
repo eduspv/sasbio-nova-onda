@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+
 export function AboutSection() {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
@@ -34,26 +35,18 @@ export function AboutSection() {
               
               {/* Main Logo Card */}
               <motion.div 
-                className="relative glass-card rounded-3xl p-12 flex items-center justify-center"
+                className=""
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-48 h-48 rounded-3xl bg-gradient-to-br from-sasbio-blue-tech to-sasbio-green-health flex items-center justify-center shadow-2xl">
-                  <span className="text-white font-display font-bold text-6xl">SB</span>
-                </div>
+                 <div className="w-84 h-84 flex items-center justify-center">
+        <img
+          src="\images\logo\logo.webp"
+          alt="SASBIO"
+          className="w-full h-full object-contain"
+        />
+      </div> 
               </motion.div>
-
-              {/* Floating Elements */}
-              <motion.div 
-                className="absolute top-4 right-4 w-20 h-20 rounded-2xl bg-sasbio-green-health/10 backdrop-blur"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              />
-              <motion.div 
-                className="absolute bottom-4 left-4 w-16 h-16 rounded-xl bg-sasbio-blue-tech/10 backdrop-blur"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
             </div>
           </motion.div>
 
@@ -74,20 +67,21 @@ export function AboutSection() {
             </motion.span>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
-              Inovação em{" "}
-              <span className="gradient-text">Biossegurança</span>{" "}
-              e Saúde
+              Somos a {" "}
+              <span className="gradient-text">SASBIO</span>{" "}
+             
             </h2>
             
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              A SASBIO é pioneira em soluções de biossegurança hospitalar e saúde ocupacional. 
-              Com tecnologia de ponta e uma equipe altamente qualificada, oferecemos serviços 
-              que garantem ambientes seguros e saudáveis para pacientes e profissionais.
+              Especializada em tratamento de ambientes, traz para o mercado nacional o que há de mais moderno
+               no mundo em soluções para o controle microbiológico e processos sanitários.
+              A empresa atua com uma equipe de especialistas, médicos infectologistas, virologistas,
+               imunologistas, médicos da medicina do trabalho, químicos, bioquímicos, biólogos, engenheiros sanitarista,
+                ambiental e civil e farmacêuticos treinados segundo normas da ABNT e certificações internacionais;
             </p>
             
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Nossa missão é transformar a forma como hospitais e empresas lidam com a 
-              biossegurança, trazendo inovação, eficiência e resultados comprovados.
+              Nossa missão é melhorar a sua qualidade de vida.
             </p>
 
             <Link to="/sobre">

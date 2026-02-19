@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
+import logoSasbio from "@/assets/logosasgrande-semfundo.png"; // ✅ ajuste o caminho se necessário
 
 const footerLinks = {
   servicos: [
@@ -17,47 +18,45 @@ const footerLinks = {
   ],
 };
 
+const socialLinks = [
+  { Icon: Linkedin, href: "https://www.linkedin.com/", label: "LinkedIn" },
+  { Icon: Instagram, href: "https://www.instagram.com/", label: "Instagram" },
+  { Icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
+];
+
 export function Footer() {
   return (
     <footer className="relative bg-gradient-to-br from-sasbio-blue-tech via-sasbio-blue-light to-sasbio-green-health text-white overflow-hidden">
       {/* Scientific Pattern */}
       <div className="absolute inset-0 scientific-grid opacity-10" />
       <div className="absolute inset-0 molecular-pattern opacity-20" />
-      
+
       <div className="relative container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center">
-                <span className="font-display font-bold text-lg">SB</span>
-              </div>
-              <span className="font-display font-bold text-2xl">SASBIO</span>
-            </div>
+  <div className="w-40 h-40 flex items-center justify-start">
+    <img
+      src={logoSasbio}
+      alt="SASBIO"
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
+
             <p className="text-white/80 text-sm leading-relaxed mb-6">
               Inovação em biossegurança e saúde. Soluções científicas para ambientes seguros e saudáveis.
             </p>
-            <div className="flex gap-3">
-              {[Linkedin, Instagram, Facebook].map((Icon, i) => (
-                <motion.a
-                  key={i}
-                  href="#"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
           </motion.div>
 
           {/* Serviços */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -67,7 +66,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.servicos.map((link) => (
                 <li key={link.label}>
-                  <Link 
+                  <Link
                     to={link.href}
                     className="text-white/70 hover:text-white transition-colors text-sm"
                   >
@@ -79,7 +78,7 @@ export function Footer() {
           </motion.div>
 
           {/* Empresa */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -89,7 +88,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.empresa.map((link) => (
                 <li key={link.label}>
-                  <Link 
+                  <Link
                     to={link.href}
                     className="text-white/70 hover:text-white transition-colors text-sm"
                   >
@@ -101,7 +100,7 @@ export function Footer() {
           </motion.div>
 
           {/* Contato */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -111,11 +110,11 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-5 h-5 text-sasbio-green-bright flex-shrink-0 mt-0.5" />
-                <span className="text-white/70">São Paulo, Brasil</span>
+                <span className="text-white/70">Brasília - DF, Brasil</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone className="w-5 h-5 text-sasbio-green-bright flex-shrink-0" />
-                <span className="text-white/70">(11) 99999-9999</span>
+                <span className="text-white/70">(61) 3257-3601</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="w-5 h-5 text-sasbio-green-bright flex-shrink-0" />
@@ -126,7 +125,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -136,14 +135,22 @@ export function Footer() {
           <p className="text-white/60 text-sm">
             © {new Date().getFullYear()} SASBIO. Todos os direitos reservados.
           </p>
-          <div className="flex gap-6 text-sm">
-            <Link to="#" className="text-white/60 hover:text-white transition-colors">
-              Política de Privacidade
-            </Link>
-            <Link to="#" className="text-white/60 hover:text-white transition-colors">
-              Termos de Uso
-            </Link>
-          </div>
+         
+            <div className="flex gap-3">
+              {socialLinks.map(({ Icon, href, label }, i) => (
+                <motion.a
+                  key={i}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <Icon className="w-5 h-5" />
+                </motion.a>
+              ))}
+            </div>
         </motion.div>
       </div>
     </footer>
