@@ -57,7 +57,7 @@ const solutions = [
       "Programa estruturado para empresas públicas e privadas, com foco na prevenção, diagnóstico precoce e tratamento de transtornos emocionais.",
   },
   {
-    image: "/images/servicespages/saude-mental/solutions/telemedicina.png",
+    image: "/images/servicespages/saude-mental/solutions/telemedicina.jpeg",
     icon: Video,
     title: "Telemedicina psicológica",
     description:
@@ -71,14 +71,14 @@ const solutions = [
       "Cuidado contínuo para quem enfrenta desafios como depressão, psicoses, controle de impulsos e transtornos da infância e adolescência.",
   },
   {
-    image: "/images/servicespages/saude-mental/solutions/referencia.png",
+    image: "/images/servicespages/saude-mental/solutions/referencia.jpeg",
     icon: Building2,
     title: "Centro de referência em saúde mental e bem-estar",
     description:
       "Espaço dedicado à promoção da saúde emocional, com foco no desenvolvimento humano e na criação de ambientes corporativos mais saudáveis.",
   },
   {
-    image: "/images/servicespages/saude-mental/solutions/psiquiatria.png",
+    image: "/images/servicespages/saude-mental/solutions/psiquiatria.jpeg",
     icon: Hospital,
     title: "Unidade de cuidados avançados em psiquiatria",
     description:
@@ -197,7 +197,7 @@ export default function SaudeMentalPage() {
               <div className="w-full">
                 <div className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden border border-border shadow-sm">
                   <img
-                    src="/images/servicespages/saude-mental/saude-mental.png"
+                    src="/images/servicespages/saude-mental/saude-mental.jpeg"
                     alt="Saúde mental no ambiente de trabalho"
                     className="w-full h-full object-cover"
                     draggable={false}
@@ -307,7 +307,7 @@ export default function SaudeMentalPage() {
                 <div className="w-full">
                   <div className="relative w-full aspect-[16/12] rounded-3xl overflow-hidden border border-border bg-background/40">
                     <img
-                      src="/images/servicespages/saude-mental/saude-mental-numeros.jpeg"
+                      src="/images/servicespages/saude-mental/saude-mental-numeros.png"
                       alt="Cenário atual e saúde mental no trabalho"
                       className="w-full h-full object-cover"
                       draggable={false}
@@ -496,14 +496,14 @@ export default function SaudeMentalPage() {
                   </Link>
 
                   <a
-                    href="tel:080000023"
+                    href="tel:08000002359"
                     className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold border border-border text-foreground hover:bg-muted transition"
                   >
-                    0800 000 23
+                    0800 000 2359
                   </a>
 
                   <a
-                    href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20Sa%C3%BAde%20Mental%20Corporativa%20da%20SASBIO."
+                    href="https://wa.me/556193282424?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20Sa%C3%BAde%20Mental%20Corporativa%20da%20SASBIO."
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-base font-semibold border border-border text-foreground hover:bg-muted transition"

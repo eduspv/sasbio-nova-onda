@@ -115,11 +115,6 @@ export default function SASMUVPage() {
                             Diante desse cenário, o controle eficaz do mosquito transmissor
                             torna-se uma medida essencial.
                           </p>
-          
-                          <p className="text-muted-foreground text-lg leading-relaxed mt-4">
-                            Atualmente, em muitos hospitais, o serviço é executado por dois profissionais e exige
-                            tempo de preparo — o que pode gerar impacto financeiro negativo e sobrecarga da equipe.
-                          </p>
                         </div>
           
                         <div className="w-full">

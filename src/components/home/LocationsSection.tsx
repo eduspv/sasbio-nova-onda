@@ -2,6 +2,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ExternalLink, ChevronUp, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { LocationsLeaflet } from "@/components/LocationsLeaflet";
+import { cn } from "@/lib/utils";
+
+type Tab = "localizacoes" | "representantes";
 
 type LocationItem = {
   label: string;
@@ -11,7 +14,6 @@ type LocationItem = {
 const locations: LocationItem[] = [
   { label: "Brasília - DF", query: "SASBIO Brasília" },
   { label: "Rio de Janeiro - RJ", query: "R. Acre, 83 - Centro" },
-  { label: "Lisboa - PRT", query: "Av. da República 48 B, Lisboa" },
 ];
 
 function mapsLink(query: string) {
@@ -19,6 +21,7 @@ function mapsLink(query: string) {
 }
 
 export function LocationsSection() {
+  const [tab, setTab] = useState<Tab>("localizacoes");
   const [open, setOpen] = useState(true);
 
   return (
@@ -52,66 +55,116 @@ export function LocationsSection() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            {/* BOX COM TOGGLE */}
-            <div className="absolute top-4 left-20 z-[20]">
+            {/* BOX COM ABAS E TOGGLE */}
+            <div className="absolute top-4 left-4 z-[20]">
               <motion.div
                 layout
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="bg-background/85 backdrop-blur-md border border-border/60 shadow-sm rounded-xl p-3 w-[230px]"
+                className="bg-background/85 backdrop-blur-md border border-border/60 shadow-sm rounded-xl p-3 w-[270px]"
               >
-                {/* Header da box */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-sasbio-green-health" />
-                    <p className="text-sm font-semibold text-foreground">
-                      Localizações
-                    </p>
-                  </div>
-
+                {/* Abas */}
+                <div className="flex gap-1 bg-muted/60 rounded-lg p-0.5 mb-3">
                   <button
-                    onClick={() => setOpen((prev) => !prev)}
-                    className="text-muted-foreground hover:text-foreground transition"
-                    aria-label={open ? "Recolher" : "Expandir"}
-                  >
-                    {open ? (
-                      <ChevronUp className="w-4 h-4" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4" />
+                    onClick={() => setTab("localizacoes")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1.5 text-xs font-medium py-1 px-2 rounded-md transition-all",
+                      tab === "localizacoes"
+                        ? "bg-background shadow-sm text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
                     )}
+                  >
+                    <MapPin className="w-3 h-3 text-sasbio-green-health" />
+                    Localizações
+                  </button>
+                  <button
+                    onClick={() => setTab("representantes")}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-1.5 text-xs font-medium py-1 px-2 rounded-md transition-all",
+                      tab === "representantes"
+                        ? "bg-background shadow-sm text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <MapPin className="w-3 h-3 text-red-500" />
+                    Representantes
                   </button>
                 </div>
 
-                {/* Conteúdo expandível */}
-                <AnimatePresence initial={false}>
-                  {open && (
+                {/* Conteúdo da aba ativa */}
+                <AnimatePresence mode="wait" initial={false}>
+                  {tab === "localizacoes" ? (
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden mt-3"
+                      key="localizacoes"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.15 }}
                     >
-                      <div className="flex flex-col gap-2">
-                        {locations.map((loc) => (
-                          <a
-                            key={loc.label}
-                            href={mapsLink(loc.query)}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="group flex items-center justify-between gap-2 text-sm text-muted-foreground hover:text-foreground transition"
-                          >
-                            <span className="truncate">{loc.label}</span>
-                            <ExternalLink className="w-4 h-4 opacity-60 group-hover:opacity-100 transition" />
-                          </a>
-                        ))}
+                      {/* Header com toggle */}
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                          Unidades
+                        </p>
+                        <button
+                          onClick={() => setOpen((prev) => !prev)}
+                          className="text-muted-foreground hover:text-foreground transition"
+                          aria-label={open ? "Recolher" : "Expandir"}
+                        >
+                          {open ? (
+                            <ChevronUp className="w-4 h-4" />
+                          ) : (
+                            <ChevronDown className="w-4 h-4" />
+                          )}
+                        </button>
                       </div>
+
+                      <AnimatePresence initial={false}>
+                        {open && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-2">
+                              {locations.map((loc) => (
+                                <a
+                                  key={loc.label}
+                                  href={mapsLink(loc.query)}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="group flex items-center justify-between gap-2 text-sm text-muted-foreground hover:text-foreground transition"
+                                >
+                                  <span className="truncate">{loc.label}</span>
+                                  <ExternalLink className="w-4 h-4 opacity-60 group-hover:opacity-100 transition" />
+                                </a>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="representantes"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <p className="text-sm text-muted-foreground">
+                        Presença em todas as{" "}
+                        <span className="font-semibold text-foreground">27 capitais</span>{" "}
+                        brasileiras.
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </motion.div>
             </div>
 
-            <LocationsLeaflet />
+            <LocationsLeaflet mode={tab} />
           </motion.div>
 
           {/* 🖼️ CLIENTES */}
@@ -122,7 +175,6 @@ export function LocationsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col gap-6"
           >
-
             <img
               src="/images/clientes/nossos-clientes.png"
               alt="Instituições atendidas pela SASBIO"

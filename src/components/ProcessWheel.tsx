@@ -73,7 +73,11 @@ export function ProcessWheel({
 }: ProcessWheelProps) {
   const safeSteps = steps ?? [];
   const [activeIndex, setActiveIndex] = useState(0);
-  const [rotation, setRotation] = useState(topAngle);
+  const [rotation, setRotation] = useState(() => {
+    const firstStep = safeSteps[0];
+    const tweak = firstStep ? (stepTweaks[firstStep.id] ?? 0) : 0;
+    return topAngle + tweak;
+  });
 
   const angleStep = useMemo(
     () => 360 / Math.max(safeSteps.length, 1),

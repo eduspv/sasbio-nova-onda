@@ -260,12 +260,6 @@ export default function BiodescontaminacaoPage() {
                 wheelImageSrc="/images/servicespages/biodescontaminacao/steps/process-wheel.png"
                 steps={[
                   {
-                    id: "capacitacao",
-                    title: "Capacitação e qualificação de equipes de limpeza",
-                    description:
-                      "Oferecemos treinamento, com pelo menos 20 horas de duração, em atendimento a protocolos sanitários operacionais e técnicas de higienização de superfícies, de acordo com manuais da ANVISA e Fiocruz. Os operadores de limpeza terão ao final do treinamento Certificado de Conclusão assinado por médico habilitado em medicina do trabalho e engenheiro sanitarista.",
-                  },
-                  {
                     id: "anamnese",
                     title: "Anamnese Ambiental",
                     description:
@@ -273,30 +267,36 @@ export default function BiodescontaminacaoPage() {
                   },
                   {
                     id: "higienizacao",
-                    title: "Higienização de Alta Performance",
+                    title: "Higienização de Alta Performance e Profilaxia Ambiental",
                     description:
                       "Importante destacar a higienização de alta performance, com aplicação de solução química através de operação mecânica, em locais de maior incidência de utilização das mãos, em objetos e superfícies, tais como maçanetas, corrimãos, elevadores e outros, sendo estes principais vetores de microrganismos. Os produtos ficam à disposição das equipes de limpeza, que serão capacitadas de acordo com protocolos sanitários e operacionais, com certificação assinada por engenheiro sanitarista e médicos com especialização em medicina do trabalho.",
                   },
                   {
                     id: "profilaxia",
-                    title: "Profilaxia Ambiental",
+                    title: "Controle da Barreira Microbiana",
                     description:
                       "Na profilaxia ambiental, temos o processo de nebulização a frio, através da dispersão de micropartículas de 0,5 a 1,0 microns, que penetram nas superfícies, com atividade prevalente, combatendo e eliminando microrganismos pelo período de 90 dias de duração. A execução do procedimento é realizada por técnicos de acordo com as normas da ABNT e adotando critérios do Exército Brasileiro. Os EPI's e equipamentos detêm selos de segurança quanto ao uso e qualidade.",
                   },
                   {
-                    id: "Testes_Certificado",
-                    title: "Testes de pessoas e superficies + Certificado",
+                    id: "capacitacao",
+                    title: "Capacitação e Qualificação das Equipes Envolvidas",
                     description:
-                      "",
+                      "Oferecemos treinamento, com pelo menos 20 horas de duração, em atendimento a protocolos sanitários operacionais e técnicas de higienização de superfícies, de acordo com manuais da ANVISA e Fiocruz. Os operadores de limpeza terão ao final do treinamento Certificado de Conclusão assinado por médico habilitado em medicina do trabalho e engenheiro sanitarista.",
+                  },
+                  {
+                    id: "Testes_Certificado",
+                    title: "Certificação e Auditoria",
+                    description:
+                      "A SASBIO realiza testagem por amostragem de pessoas e superfícies utilizando técnica de SWAB associada à Inteligência Artificial (IA), permitindo análise precisa da qualidade do ar, índices de contaminação, incidência microbiológica e padrões de risco coletivo. Durante os 90 dias de garantia, é feito monitoramento técnico contínuo com avaliação comparativa de indicadores, construção de mapas de incidência e correções preventivas baseadas em dados científicos. Com base nos relatórios técnicos e mapas epidemiológicos, é emitido o Certificado de Ambiente Seguro, que atesta conformidade sanitária, controle de contaminação ambiental e segurança para circulação coletiva, reforçando o compromisso institucional com saúde, ciência e responsabilidade social."
                   },
                 ]}
                 topAngle={0}
                 stepTweaks={{
-                  capacitacao: 0,
+                  anamnese: -71,
+                  higienizacao: -50,
+                  profilaxia: -37,
+                  capacitacao: 216,
                   Testes_Certificado: 22,
-                  profilaxia: 35,
-                  higienizacao: 22,
-                  anamnese: 1,
                 }}
               />
             </div>

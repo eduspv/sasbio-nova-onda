@@ -52,26 +52,107 @@ const AboutPage = () => {
               <h2 className="text-3xl font-display font-bold text-foreground mb-6">
                 Nossa História
               </h2>
-              <div className="prose prose-lg text-muted-foreground space-y-4">
+              <div className="prose prose-lg text-muted-foreground space-y-4 max-w-none">
                 <p>
-                  A SASBIO nasceu da visão de transformar a biossegurança hospitalar no Brasil. 
-                  Fundada por profissionais com vasta experiência na área de saúde, nossa empresa 
-                  se consolidou como referência em soluções inovadoras para ambientes hospitalares.
+                  A história da <strong>SASBIO</strong> nasce de uma visão que antecedeu o seu tempo.
                 </p>
+
                 <p>
-                  Desde o início, investimos em tecnologia de ponta e capacitação contínua de nossa 
-                  equipe, garantindo que cada serviço prestado atenda aos mais rigorosos padrões 
-                  de qualidade e segurança.
+                  Fundada em <strong>2015</strong>, a <strong>SAS Representações e Comércio LTDA</strong> surge a partir do espírito 
+                  empreendedor de <strong>Ricardo Marques</strong> e <strong>Simone Azevedo Santos</strong>, com o propósito inicial
+                  de atuar na representação de soluções inovadoras voltadas aos setores de <strong>saúde, educação, tecnologia e inovação</strong>.
                 </p>
+
                 <p>
-                  Nossa missão é promover ambientes mais seguros e saudáveis, contribuindo para 
-                  a redução de infecções hospitalares e a melhoria da qualidade de vida de 
-                  pacientes e profissionais de saúde.
+                  Mais do que um projeto empresarial, a SAS sempre carregou um significado pessoal:
+                  seu nome homenageia <strong>Simone</strong> — a base <strong>sólida, estratégica e operacional</strong> do negócio.
                 </p>
+
                 <p>
-                  Com presença em diversos estados brasileiros, a SASBIO continua expandindo 
-                  sua atuação, levando inovação e excelência para cada vez mais instituições 
-                  de saúde.
+                  O ponto de inflexão veio quando <strong>Ricardo Marques</strong>, à época exercendo função estratégica 
+                  no <strong>Arquivo Nacional</strong>, foi apresentado a uma tecnologia voltada ao 
+                  <strong>controle microbiano</strong> e à <strong>mitigação de riscos em ambientes insalubres</strong>.
+                </p>
+
+                <p>
+                  A proposta, inicialmente direcionada ao <strong>sistema prisional brasileiro</strong>, despertou uma 
+                  percepção maior: a necessidade urgente de transformar ambientes coletivos em 
+                  <strong>espaços seguros, saudáveis e protegidos contra agentes patogênicos</strong>.
+                </p>
+
+                <p>
+                  Antes mesmo da pandemia, Marques já defendia um novo paradigma — o da 
+                  <strong>biossegurança como elemento essencial à saúde pública e à qualidade de vida</strong>.
+                </p>
+
+                <p>
+                  Com a chegada da pandemia, o mundo confirmou aquilo que já era convicção:
+                  <strong>ambientes seguros salvam vidas</strong>.
+                </p>
+
+                <p>
+                  É nesse contexto que a SAS evolui e se consolida como <strong>SASBIO</strong>, uma marca que se torna 
+                  <strong>referência nacional em biossegurança, sanitização e inteligência sanitária</strong>.
+                </p>
+
+                <p>
+                  A empresa passa a atuar de forma estratégica na proteção de 
+                  <strong>ambientes públicos e privados</strong>, contribuindo diretamente para a 
+                  <strong>redução de riscos biológicos</strong> e promoção da <strong>saúde coletiva</strong>.
+                </p>
+
+                <div>
+                  <p>
+                    A SASBIO estrutura sua atuação com base em <strong>três pilares fundamentais</strong>:
+                  </p>
+
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Tecnologia aplicada à biossegurança:</strong> soluções avançadas de 
+                      sanitização e biodescontaminação com eficácia comprovada.
+                    </li>
+                    <li>
+                      <strong>Inteligência sanitária:</strong> diagnóstico, mapeamento de riscos, 
+                      protocolos operacionais e monitoramento contínuo.
+                    </li>
+                    <li>
+                      <strong>Inovação e pesquisa:</strong> desenvolvimento de novas metodologias, 
+                      produtos e projetos voltados à <strong>biotecnologia</strong> e <strong>expansão internacional</strong>.
+                    </li>
+                  </ul>
+                </div>
+
+                <p>
+                  Enquanto <strong>Ricardo Marques</strong> lidera a visão <strong>estratégica, institucional e de expansão</strong>, 
+                  <strong>Simone Azevedo Santos</strong> assume papel essencial na sustentação da operação, conduzindo 
+                  com excelência o <strong>back office</strong>, a <strong>gestão administrativa, financeira e de pessoas</strong> — 
+                  garantindo <strong>solidez, governança e crescimento estruturado</strong>.
+                </p>
+
+                <p>
+                  Hoje, a <strong>SASBIO</strong> se posiciona como uma empresa que vai além da prestação de serviços:
+                  ela entrega <strong>segurança, prevenção e qualidade de vida</strong>.
+                </p>
+
+                <p>
+                  Seus serviços impactam diretamente a saúde das pessoas, promovendo 
+                  <strong>ambientes mais seguros</strong> em <strong>hospitais, escolas, órgãos públicos, empresas</strong> 
+                  e espaços de grande circulação.
+                </p>
+
+                <p>
+                  Preparada para o futuro, a SASBIO avança na implantação de 
+                  <strong>centros de pesquisa e desenvolvimento em biotecnologia</strong>, na 
+                  <strong>expansão nacional e internacional</strong>, e na estruturação de 
+                  <strong>modelos escaláveis</strong> como franquias e soluções integradas.
+                </p>
+
+                <p>
+                  Mais do que uma empresa, a SASBIO representa uma causa:
+                </p>
+
+                <p className="font-semibold text-foreground">
+                  proteger vidas por meio da ciência, da inovação e da responsabilidade sanitária.
                 </p>
               </div>
             </motion.div>

@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import manualPDF from "@/images/servicespages/banho-no-leito/folder/Manual-banho-no-leito.pdf";
 import {
   ArrowLeft,
   Droplets,
@@ -70,7 +71,7 @@ export default function BanhoNoLeitoPage() {
         title: "BEM ESTAR",
         description:
           "Reproduzir no banho no leito as sensações semelhantes às promovidas pelo banho no chuveiro.",
-        image: "/images/servicespages/banho-no-leito/steps/bem-estar.png",
+        image: "/images/servicespages/banho-no-leito/steps/bem-estar.jpeg",
         icon: HeartPulse,
       },
       {
@@ -86,7 +87,7 @@ export default function BanhoNoLeitoPage() {
         title: "DIMINUIÇÃO DE DOENÇAS",
         description:
           "Reduzir o esforço repetitivo ocorrido nos banhos de leitos, diminuindo a chance de desenvolver doenças ocupacionais como lombalgia e doenças osteoarticulares.",
-        image: "/images/servicespages/banho-no-leito/steps/diminuicao-doencas.png",
+        image: "/images/servicespages/banho-no-leito/steps/diminuicao-doencas.jpeg",
         icon: Activity,
       },
       {
@@ -94,7 +95,7 @@ export default function BanhoNoLeitoPage() {
         title: "REDUÇÃO DE MICROORGANISMOS",
         description:
           "Reduzir o trânsito de microorganismos patogênicos de uma região corporal do paciente para outra.",
-        image: "/images/servicespages/banho-no-leito/steps/reducao-micro.png",
+        image: "/images/servicespages/banho-no-leito/steps/reducao-micro.jpeg",
         icon: Shield,
       },
     ],
@@ -530,11 +531,12 @@ export default function BanhoNoLeitoPage() {
 
                 <div className="flex flex-col gap-3">
                   <a
-                    href="/files/manual-banho-no-leito.pdf"
+                    href="/images/servicespages/banho-no-leito/folder/Manual-banho-no-leito.pdf"
+                    download
                     className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 text-base font-semibold bg-sasbio-green-health text-white hover:opacity-90 transition"
                   >
                     <Download className="w-5 h-5" />
-                    Baixar manual completo
+                    Baixe o folder completo
                   </a>
 
                   <Link

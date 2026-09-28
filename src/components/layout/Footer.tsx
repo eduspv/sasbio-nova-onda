@@ -19,9 +19,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { Icon: Linkedin, href: "https://www.linkedin.com/", label: "LinkedIn" },
-  { Icon: Instagram, href: "https://www.instagram.com/", label: "Instagram" },
-  { Icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/company/sasbio-especializadas-em-saúde-de-alta-performance/posts/?feedView=all", label: "LinkedIn" },
+  { Icon: Instagram, href: "https://www.instagram.com/sasbio_saude", label: "Instagram" },
+  { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61572245032917", label: "Facebook" },
 ];
 
 export function Footer() {
@@ -114,7 +114,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone className="w-5 h-5 text-sasbio-green-bright flex-shrink-0" />
-                <span className="text-white/70">(61) 3257-3601</span>
+                <span className="text-white/70">(61) 9328-2424</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="w-5 h-5 text-sasbio-green-bright flex-shrink-0" />

@@ -33,55 +33,55 @@ export default function FranchisePage() {
         <div className="container mx-auto px-4 space-y-24">
 
           {/* INTRODUÇÃO */}
-<motion.section
-  initial={{ opacity: 0, y: 18 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.7 }}
-  className="max-w-6xl mx-auto"
->
-  <div className="grid lg:grid-cols-2 gap-12 items-center">
-    {/* TEXTO – ESQUERDA */}
-    <div>
-      <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-        <span className="gradient-text">Sua chance </span>de ser um{" "}
-        <span className="gradient-text">Franqueado</span>
-      </h2>
+          <motion.section
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* TEXTO – ESQUERDA */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+                  <span className="gradient-text">Sua chance </span>de ser um{" "}
+                  <span className="gradient-text">Franqueado</span>
+                </h2>
 
-      <p className="text-muted-foreground text-lg leading-relaxed">
-        Alinhada com a filosofia de promover segurança em ambientes de acesso
-        comum e coletivo, utilizando metodologia inovadora dentro de um
-        ecossistema, cujo objetivo é o combate e eliminação de microrganismos
-        prejudiciais à saúde humana, seja no diagnóstico e na monitorização de
-        ambientes, da profilaxia como medida preventiva utilizando soluções de
-        longa duração, treinamento e capacitação de equipes, certificação de
-        acordo com normas técnicas brasileiras e internacionais.
-      </p>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Alinhada com a filosofia de promover segurança em ambientes de acesso
+                  comum e coletivo, utilizando metodologia inovadora dentro de um
+                  ecossistema, cujo objetivo é o combate e eliminação de microrganismos
+                  prejudiciais à saúde humana, seja no diagnóstico e na monitorização de
+                  ambientes, da profilaxia como medida preventiva utilizando soluções de
+                  longa duração, treinamento e capacitação de equipes, certificação de
+                  acordo com normas técnicas brasileiras e internacionais.
+                </p>
 
-      <p className="text-muted-foreground text-lg leading-relaxed mt-4">
-        A SASBIO estruturou um projeto de <strong>FRANQUIA</strong> que conta
-        com ferramentas de apoio e suporte com tecnologias consideradas as
-        mais modernas do mercado, tendo como um de seus principais pilares
-        a inovação e tecnologia de ponta.
-      </p>
-    </div>
+                <p className="text-muted-foreground text-lg leading-relaxed mt-4">
+                  A SASBIO estruturou um projeto de <strong>FRANQUIA</strong> que conta
+                  com ferramentas de apoio e suporte com tecnologias consideradas as
+                  mais modernas do mercado, tendo como um de seus principais pilares
+                  a inovação e tecnologia de ponta.
+                </p>
+              </div>
 
-    {/* IMAGEM – DIREITA */}
-    <div className="w-full">
-      <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-sm bg-background/30">
-        <img
-          src="/images/franquias/sacola-sasbio.png"
-          alt="Franquia SASBIO"
-          className="w-full h-full object-cover"
-          draggable={false}
-        />
+              {/* IMAGEM – DIREITA */}
+              <div className="w-full">
+                <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-sm bg-background/30">
+                  <img
+                    src="/images/franquias/sacola-sasbio.png"
+                    alt="Franquia SASBIO"
+                    className="w-full h-full object-cover"
+                    draggable={false}
+                  />
 
-        {/* Overlay sutil no padrão SASBIO */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-sasbio-green-health/25 via-sasbio-blue-tech/15 to-transparent" />
-      </div>
-    </div>
-  </div>
-</motion.section>
+                  {/* Overlay sutil no padrão SASBIO */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-sasbio-green-health/25 via-sasbio-blue-tech/15 to-transparent" />
+                </div>
+              </div>
+            </div>
+          </motion.section>
 
 
           {/* CARACTERÍSTICAS DA OPERAÇÃO */}
