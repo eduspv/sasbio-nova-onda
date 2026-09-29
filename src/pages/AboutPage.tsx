@@ -177,12 +177,18 @@ const AboutPage = () => {
                   sobre a SASBIO, nossos serviços e diferenciais.
                 </p>
                 
-                <Button 
+                <Button
+                  asChild
                   size="lg"
                   className="pill-button glow-button bg-gradient-to-r from-sasbio-green-health to-sasbio-green-bright text-white border-0"
                 >
-                  <Download className="mr-2 w-5 h-5" />
-                  Baixar PDF
+                  <a
+                    href="/docs/release-institucional-sasbio.pdf"
+                    download="Release-Institucional-SASBIO.pdf"
+                  >
+                    <Download className="mr-2 w-5 h-5" />
+                    Baixar PDF
+                  </a>
                 </Button>
               </div>
 
